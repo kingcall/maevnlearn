@@ -1,0 +1,29 @@
+# dev 环境
+server:
+  port: 80
+spring:
+  application:
+    name: Bigdata-Alarm
+  datasource:
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/alarm?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: www1234
+  secondarydatasource:
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/metric_center?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: www1234
+  dingding:
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=f3811f3aafa9d5c77542d819e441d8dda8467cc4f78d10d108de1cf8f902db6a
+# 在多数据源中，这个可以不配置,因为每个数据源都进行了相应的配置
+mybatis:
+  mapper-locations:
+    classpath:mappers/*/*.xml
+swagger:
+  title: SpringBoot项目接口详情
+  description: 项目接口测试
+  version: V1.0
+  basePackage: com.kingcall.integration.rest.controller
+
+
